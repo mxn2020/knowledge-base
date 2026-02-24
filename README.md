@@ -1,69 +1,94 @@
-# Internal Knowledge Base (Enterprise Wiki)
+# Internal Knowledge Base
 
-## Pages & Features
+Enterprise wiki and knowledge management platform.
 
-### 1. Home / Search
-- Global search with instant results
-- Recently updated articles
-- Popular / trending articles
-- Category / department quick links
-- Pinned announcements
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Article Viewer
-- Article with rich content (text, images, code blocks, tables, embeds)
-- Table of contents sidebar
-- Breadcrumb navigation
-- Related articles suggestions
-- Print / export as PDF
+## Tech Stack
 
-### 3. Article Editor
-- WYSIWYG / markdown editor
-- Real-time collaborative editing
-- Image & file embedding
-- Version history with diff view
-- Draft / publish toggle
-- Author attribution
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Spaces / Categories
-- Organize articles by team, department, or topic
-- Space home page with overview & article tree
-- Create / edit / archive spaces
-- Space-level permissions
-- Nested categories & subcategories
+## Getting Started
 
-### 5. Templates
-- Article templates (how-to, FAQ, policy, meeting notes)
-- Create custom templates
-- Quick-start from template
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Comments & Feedback
-- Comment thread per article
-- Inline comments on specific text
-- "Was this helpful?" feedback widget
-- @mention team members
+## License
 
-### 7. Navigation & Structure
-- Sidebar article tree (expandable / collapsible)
-- Tag system with tag cloud
-- Cross-article linking
-- Bookmark / favorite articles
-- Recent views history
+MIT © Mehdi Nabhani
 
-### 8. Permissions & Access
-- Public, team, or restricted visibility per article / space
-- Role-based access (admin, editor, viewer)
-- Approval workflow for sensitive content
-- Audit log of changes
+---
 
-### 9. Analytics
-- Article views & unique readers
-- Search queries (popular & no-results)
-- Stale content detector (not updated in X days)
-- Contributor leaderboard
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Settings
-- Organization profile & branding
-- Default permissions
-- Editor preferences
-- Notification rules (new article, updates, comments)
-- Integration settings (Slack, email)
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
